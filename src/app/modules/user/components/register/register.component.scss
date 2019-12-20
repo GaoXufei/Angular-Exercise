@@ -1,0 +1,51 @@
+.wrapper{
+  padding: 50px ;
+  width: 500px;
+
+  & h1{
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    background: #ccc;
+  }
+}
+
+ul{
+  list-style-type: none;
+
+  li{
+    & + li{
+      padding-top: 20px;
+    }
+
+    label{
+      display: block;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    button{
+      width: 100%;
+      background:#fff;
+      color: #333;
+      border:1px solid #ccc;
+    }
+  }
+}
+
+input[type="text"],
+input[type="password"]{
+  box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+input.ng-invalid.ng-touched{
+  border:1px solid lightcoral;
+}
+input.ng-touched.ng-valid{
+  border:1px solid lightskyblue;
+}

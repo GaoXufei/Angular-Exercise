@@ -1,0 +1,18 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="wrapper">
+    <ul>
+      <li>
+        <label>Username</label>
+        <input type="text" formControlName="username" />
+      </li>
+      <li>
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+      </li>
+      <li>
+        <button>提交</button>
+      </li>
+    </ul>
+    <h1>{{ registerForm.status }}</h1>
+  </div>
+</form>

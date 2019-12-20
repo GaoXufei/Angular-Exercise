@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../models/post.model';
-import { postData } from '../../posts';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -13,13 +13,14 @@ export class PostDetailComponent implements OnInit {
   entity: Post;
 
   constructor(
-    private route: ActivatedRoute
+    private readonly route: ActivatedRoute,
+    private readonly postService: PostService,
   ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const id = +params.get('id');
-      this.entity = postData.find(item => item.id === id);
+      this.entity = this.postService.findOneById(id);
     });
   }
 
