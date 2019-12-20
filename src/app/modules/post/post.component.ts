@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from './models/post.model';
+import { postData } from './posts';
 
 @Component({
   selector: 'app-post',
@@ -6,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
-  constructor() {}
   title = `Post`;
-  entities = [
-    { title: 'title1', created: '2020-12-12' },
-    { title: 'title2', created: '2020-12-12' },
-    { title: 'title3', created: '2020-12-12' },
-    { title: 'title4', created: '2020-12-12' },
-  ];
+  entities: Post[];
+
+  constructor() {
+    this.entities = postData;
+  }
+
   ngOnInit() {}
 
   removeHandle(index) {

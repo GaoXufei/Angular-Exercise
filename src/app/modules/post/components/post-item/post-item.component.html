@@ -1,0 +1,6 @@
+<li>
+  <h3 [title]="entity.title" [textContent]="entity.title"></h3>
+  <p>{{ entity.created }}</p>
+  <button (click)="onClick(i)">点击(remove)</button>
+  <button [routerLink]="['/posts', entity.id]">详情</button>
+</li>

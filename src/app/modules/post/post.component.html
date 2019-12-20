@@ -1,9 +1,8 @@
-<p>{{ title }}</p>
 <ul>
-  <li *ngFor="let entity of entities; let i = index">
-    <h3 [title]="entity.title" [textContent]="entity.title"></h3>
-    <p>{{ entity.created }}</p>
-    <button (click)="removeHandle(i)">点击(remove)</button>
-  </li>
-  <li *ngIf="!entities.length">数据为空</li>
+  <app-post-item
+    *ngFor="let entity of entities; index as i"
+    [entity]="entity"
+    [i]="i"
+    (remove)="removeHandle($event)"
+  ></app-post-item>
 </ul>
